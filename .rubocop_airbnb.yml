@@ -1,2 +1,2 @@
-requre:
+require:
   - rubocop-airbnb
