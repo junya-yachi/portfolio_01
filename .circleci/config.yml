@@ -22,7 +22,7 @@ jobs:
       - run:
           name: Setup database
           command: |
-            docker-compose exec app bash -c 'yes n | bundle exec rails g spree:install --migrate --seed --sample --auto_accept'
+            docker-compose exec app bash -c 'yes n
       - run:
           name: Run rspec
           command: docker-compose exec app rspec
@@ -40,6 +40,9 @@ jobs:
             - gemfiles-{{ .Branch }}-
             - gemfiles-master-
       - run: bundle config --local path vendor/bundle
+      - run:
+          name: update bundler
+          command: gem install bundler:2.3.20
       - run:
           name: bundle install
           command: bundle check || bundle install --jobs=8 --clean
