@@ -21,7 +21,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.18'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'ast', '~> 2.4.2'
 gem 'activesupport', '~> 6.1.7.1'
+gem 'devise'
+gem 'rails-i18n'
+gem 'devise-i18n'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -37,7 +40,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rubocop-airbnb'
-  gem 'rspec-rails'
 end
 
 group :development do
