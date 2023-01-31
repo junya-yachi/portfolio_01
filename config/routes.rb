@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: 'users/resistrations'
+    registrations: 'users/registrations'
   }
   devise_scope :user do
     post 'users/sign_up/confirm',  to: 'users/registrstions#confirm'
