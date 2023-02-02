@@ -11,18 +11,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    @user = User.new(configure_sign_up_params)
+    @user = User.new(sign_up_params)
     render :new and return if params[:back]
     super
   end
 
-  # confirm 追加
+  # 新規追加
   def confirm
-    i = 0
-    @password = ""
-    while i < @user.password.length
-      @password += "*"
-      i += 1
+    @user = User.new(sign_up_params)
+    if @user.invalid?
+      flash.now[:notice] = "入力内容にエラーがあります"
+      render :new
+      return
     end
   end
 

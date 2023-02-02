@@ -1,17 +1,24 @@
-<div>
-  <h2>入力情報の確認</h2>
-  <%= form_with(model: resource, scope: resource_name, url: registration_path(resource_name)) do |f| %>
-    <div>
-      <p><%= fa.label :name %><%= f.text_field :name, value: @user.name, readonly: true %></p>
-    </div>
-    <div>
-      <p><%= fa.label :email %><%= f.text_field :email, value: @user.email, readonly: true %></p>
-    </div>
-    <div>
-      <p><%= fa.label :password %><%= @password %></p>
-    </div>
+<section class="user_container">
+  <div class="user_form">
+    <h2>入力情報の確認</h2>
+    <%= form_with(model: resource, scope: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div class="field">
+        <p><%= f.label :name, "店舗名" %><br />
+        <%= f.text_field :name, value: @user.name, readonly: true %></p>
+      </div>
+      <div class="field">
+        <p><%= f.label :email, "メールアドレス" %><br />
+        <%= f.text_field :email, value: @user.email, readonly: true %></p>
+      </div>
+      <div class="field">
+        <p><%= f.label :password, "パスワード" %><br />
+        <%# <%= @password </p> %>
+        <%= blind(@user.password) %>
+        <%= f.hidden_field :password, value: @user.password %>
+      </div>
 
-    <%= f.submit "修正する", name: :back %>
-    <%= f.submit "登録する" %>
-  <% end %>
-</div>
+      <%= f.submit "修正する", name: :back %>
+      <%= f.submit "登録する" %>
+    <% end %>
+  </div>
+</section>
