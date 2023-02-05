@@ -3,22 +3,21 @@
     <h2>入力情報の確認</h2>
     <%= form_with(model: resource, scope: resource_name, url: registration_path(resource_name)) do |f| %>
       <div class="field">
-        <p><%= f.label :name, "店舗名" %><br />
+        <p><%= f.label :name %><br />
         <%= f.text_field :name, value: @user.name, readonly: true %></p>
       </div>
       <div class="field">
-        <p><%= f.label :email, "メールアドレス" %><br />
+        <p><%= f.label :email %><br />
         <%= f.text_field :email, value: @user.email, readonly: true %></p>
       </div>
       <div class="field">
-        <p><%= f.label :password, "パスワード" %><br />
+        <p><%= f.label :password %><br />
         <%# <%= @password </p> %>
         <%= blind(@user.password) %>
         <%= f.hidden_field :password, value: @user.password %>
       </div>
-
-      <%= f.submit "修正する", name: :back %>
-      <%= f.submit "登録する" %>
+      <%= f.submit t('.back'), name: :back %><br />
+      <%= f.submit t('users.registrations.new.sign_up') %>
     <% end %>
   </div>
 </section>

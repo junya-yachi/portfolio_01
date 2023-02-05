@@ -16,6 +16,6 @@ ja:
       user: ユーザー
     attributes:
       user:
-        name: ユーザーネーム
+        name: 店舗名
         image: アイコン
         self_intro: 自己紹介

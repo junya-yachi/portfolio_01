@@ -1,34 +1,47 @@
 <section class="user_container">
   <div class="user_form">
-    <h2>新規アカウント作成</h2>
+    <h2><%= t('users.registrations.new.sign_up') %></h2>
     <%= form_with model: @user, url: users_sign_up_confirm_path(@user), local: true do |f| %>
-      <%= render "users/shared/error_messages", resource: resource %>
-
+      <%= render "devise/shared/error_messages", resource: resource %>
       <div class="field">
-        <%= f.label :name, "店舗名" %><br />
-        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "name" %>
+        <div>
+          <%= f.label :name %>
+        </div>
+        <div>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: '○○店' %>
+        </div>
       </div>
       <div class="field">
-        <%= f.label :email, "メールアドレス" %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "e-mail.com" %>
+        <div>
+          <%= f.label :email %>
+        </div>
+        <div>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'e-mail.com' %>
+        </div>
       </div>
       <div class="field">
-        <%= f.label :password, "パスワード" %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> 文字以上で設定をしてください)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
+        <div>
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %>
+          <% end %>
+        </div>
+        <div>
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
       </div>
       <div class="field">
-        <%= f.label :password_confirmation, "確認のため、もう一度パスワードを入力してください" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        <div>
+          <%= f.label :password_confirmation %>
+        </div>
+        <div>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
       </div>
-
       <div class="actions">
-        <%= f.submit "確認" %>
+        <%= f.submit t('.sign_up') %>
       </div>
     <% end %>
-
     <%= render "users/shared/links" %>
   </div>
 </section>
