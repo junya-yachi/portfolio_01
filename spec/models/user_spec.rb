@@ -12,33 +12,38 @@ RSpec.describe 'User', type: :model do
     end
 
     context "登録が完了出来ない場合のテスト" do
-      it 'nameが未入力でエラー' do
+      it 'nameが未入力の場合は登録出来ないこと' do
         user.name = ''
         user.valid?
-        # expect(user.errors.full_messages).to be_added(:name, :blank)
         expect(user.errors).to be_of_kind(:name, :blank)
       end
-      it 'emailが未入力でエラー' do
+      it 'emailが未入力の場合は登録出来ないこと' do
         user.email = ''
         user.valid?
         expect(user.errors).to be_of_kind(:email, :blank)
       end
-      it 'passwordが未入力でエラー' do
+      it 'passwordが未入力の場合は登録出来ないこと' do
         user.password = ''
         user.valid?
         expect(user.errors).to be_of_kind(:password, :blank)
       end
-      it '256文字以上(上限オーバー)のメールアドレスでエラー' do
-        # user.email = 'a' * 246 + '@sample.jp'
-        user.email = Faker::Lorem.characters(246) + '@sample.jp'
-        user.valid?
-        expect(user.errors).to be_added(:email, :too_long, count: 255)
+      it '重複したメールアドレスが存在する場合は登録出来ないこと' do
+        user.save
+        user2.email = user.email
+        user2.valid?
+        expect(user2.errors).to be_of_kind(:email, :taken)
       end
-      # it '重複したメールアドレスが存在する場合は登録出来ない' do
-      #   user.save
-      #   user2.email = user.email
-      #   expect(subject.error).to to be_of_kind(:email, :already_confirmed)
-      # end
+      it '@記入のないメールアドレスは登録出来ないこと' do
+        user.email = Faker::Lorem.characters(number: 16, min_alpha: 16)
+        user.valid?
+        expect(user.errors).to be_of_kind(:email, :invalid)
+      end
+      it 'パスワードが６文字未満の場合は登録出来ないこと' do
+        user.password = Faker::Lorem.characters(number: 5, min_alpha: 1, min_numeric: 1)
+        user.valid?
+        expect(user.errors).to be_of_kind(:password, :too_short)
+      end
+      it ''
     end
   end
 end

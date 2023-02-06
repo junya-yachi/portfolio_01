@@ -21,3 +21,13 @@
   text-align  : center;
 }
 
+.input-wrap {
+  position: relative;
+}
+
+.toggle-pass {
+  position: absolute;
+  top: 57%;
+  left: 14%;
+  transform: translateY(-50%);
+}

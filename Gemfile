@@ -41,6 +41,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rubocop-airbnb'
   gem 'faker'
+  gem 'pry-rails'
 end
 
 group :development do

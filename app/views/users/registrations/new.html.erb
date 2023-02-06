@@ -26,8 +26,9 @@
           <%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %>
           <% end %>
         </div>
-        <div>
-          <%= f.password_field :password, autocomplete: "new-password" %>
+        <div class="input-wrap">
+          <%= f.password_field :password, autocomplete: "new-password"%>
+          <i class="toggle-pass fa fa-eye-slash"></i>
         </div>
       </div>
       <div class="field">
