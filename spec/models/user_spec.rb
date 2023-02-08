@@ -43,7 +43,12 @@ RSpec.describe 'User', type: :model do
         user.valid?
         expect(user.errors).to be_of_kind(:password, :too_short)
       end
-      it ''
+      it 'passwordとpassword_confirmationが不一致の場合は登録出来ないこと' do
+        user.password = 'password'
+        user.password_confirmation = 'password_confirmation'
+        user.valid?
+        expect(user.errors).to be_of_kind(:password_confirmation, :confirmation)
+      end
     end
   end
 end

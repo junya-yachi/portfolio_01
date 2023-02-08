@@ -12,7 +12,6 @@
       </div>
       <div class="field">
         <p><%= f.label :password %><br />
-        <%# <%= @password </p> %>
         <%= blind(@user.password) %>
         <%= f.hidden_field :password, value: @user.password %>
       </div>
