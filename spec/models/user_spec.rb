@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'User', type: :model do
   describe 'ユーザー登録のテスト' do
-    let(:user) { create(:user)}
-    let(:user2) { create(:user)}
+    let(:user) { create(:user) }
+    let(:user2) { create(:user) }
 
     context "登録が完了出来る場合のテスト" do
       it '登録完了(正常)' do
