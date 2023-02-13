@@ -1,0 +1,57 @@
+<!-- HEADER -->
+<div class="header">
+  <!-- TOPBAR -->
+  <div class="top_bar">
+    <div class="top_container">
+      <div class="top_row">
+        <% if !logged_in? %>
+          <div class="top_right">
+            <%= link_to new_user_session_path do %>
+              <div class="log_in_btn">ログイン</div>
+            <% end %>
+            <%= link_to new_user_registration_path do %>
+              <div calss="sign_up_btn">新規登録</div>
+            <% end %>
+        <% else %>
+          <div class="top_right">
+            <div class="user_name"><%= current_user.name %></div>
+            <div class="navbar_toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controlls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler navbar-manu">メニュー</span>
+            </div>
+            <nav class="collapse navbar-collapse" id="navbarNav">
+              <ul class="header_menu navbar-nav">
+                <li>
+                  <%= link_to _path do%>
+                    在庫管理表
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to _path do%>
+                    売上一覧
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to _path do%>
+                    発注
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to _path do%>
+                    編集
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to _path do%>
+                    ログアウト
+                  <% end %>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        <% end %>
+          <%# <div class="top_right">
+          </div> %>
+      </div>
+    </div>
+  </div>
+</div>

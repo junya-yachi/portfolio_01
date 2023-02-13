@@ -1,0 +1,40 @@
+.home_container {
+  background-image: image-url('game_center.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 560px;
+  margin: 0;
+}
+
+.home_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 240px;
+  position: relative;
+  text-align: center;
+  background-color: gray;
+  margin: 0 auto;
+}
+
+// .home_title {
+// }
+
+.home_title > h1 {
+  color: #fff;
+}
+
+@font-face {
+  font-family: 'Honeycomb';
+  src: url('../../fonts/Honeycomb\ Font\ Regular.otf') format(‘opentype‘);
+}
+.home_title > h2 {
+  color: #fff;
+  font-family: 'Honeycomb', sans-serif;
+}
+
+.home_title > p {
+  color: #fff;
+}
