@@ -1,58 +1,132 @@
-.home_container {
-  background-image: image-url('game_center.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+// BODY
+body {
+  background     : #EBECF0;
+}
+// HEADER
+.header {
+  position: fixed;
   width: 100%;
-  height: 560px;
-  margin: 0;
+  top: 0;
+  z-index: 100;
+  background     : #EBECF0;
+  height         : 70px;
+  line-height    : 42px;
+  justify-content: space-between;
 }
+// .top_bar {
 
-.home_box {
+// }
+// .top_container {
+
+// }
+// .top_row {
+
+// }
+.top_right {
+  height: 70px;
+  float  : right;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 400px;
-  height: 240px;
-  position: relative;
+}
+.log_in_btn {
+  border-radius: 25%;
+  background   : #EBECF0;
+  box-shadow   : 5px 5px 20px #c8c9cc,
+  -5px -5px 20px #ffffff;
+}
+.sign_up_btn {
+  border-radius: 25%;
+  background   : #EBECF0;
+  box-shadow   : 5px 5px 20px #c8c9cc,
+                -5px -5px 20px #ffffff;
+}
+// .user_name {
+//   color      : #000;
+//   font-size  : 24px;
+//   text-align : center;
+//   padding    : 0 16px;
+//   line-height: 70px;
+// }
+// .navbar-toggler {
+//   height: 70px;
+//   line-height  : 70px;
+//   color        : #000;
+//   padding      : 0 12px;
+//   border-radius: 25%
+//   float        : right;
+// }
+// .nav-bar-menu {
+//   height: 70px;
+//   color : #fff;
+//   margin: 0 40px;
+// }
+// .navbar-collapse {
+//   text-align: center;
+// }
+// .header_menu {
+//   background: #fff;
+//   text-align: left;
+//   position  : absolute;
+//   padding   : 12px;
+// }
+.nav-item {
+  width: 104px;
   text-align: center;
-  background-color: gray;
-  margin: 0 auto;
+  margin-right: 8px;
+  border-radius: 16px;
+  background   : #EBECF0;
+  box-shadow   : 5px 5px 20px #c8c9cc,
+                -5px -5px 20px #ffffff;
 }
 
+// home
+.home_container {
+  // background-image : image-url('game_center.jpg');
+  // background-size  : cover;
+  // background-repeat: no-repeat;
+  width            : 100%;
+  height           : 560px;
+  margin           : 70px 0;
+}
+.home_box {
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  width           : 400px;
+  height          : 240px;
+  position        : relative;
+  text-align      : center;
+  background-color: gray;
+  margin          : 32px auto;
+}
 // .home_title {
 // }
-
 .home_title > h1 {
   color: #fff;
 }
-
 @font-face {
   font-family: 'Honeycomb';
   src: url('../../fonts/Honeycomb\ Font\ Regular.otf') format(‘opentype‘);
 }
 .home_title > h2 {
-  color: #fff;
+  color      : #fff;
   font-family: 'Honeycomb', sans-serif;
 }
-
 .home_title > p {
   color: #fff;
 }
-
 // FOOTER
 .wrapper {
   min-height: 75vh;
-  position: relative;
+  position  : relative;
 }
-
 .footer {
-  position: absolute;
-  bottom: 0px;
-  height: 180px;
-  width: 100%;
-  margin-top: 64px;
+  position   : absolute;
+  bottom     : 0px;
+  height     : 180px;
+  width      : 100%;
+  margin-top : 64px;
   padding-top: 90px;
-  background: #111;
-  color: #fff;
-  text-align: center;
+  background : #111;
+  color      : #fff;
+  text-align : center;
 }
