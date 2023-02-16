@@ -77,7 +77,19 @@ body {
   box-shadow   : 5px 5px 20px #c8c9cc,
                 -5px -5px 20px #ffffff;
 }
-
+.d-flex {
+  justify-content: center;
+}
+.d-flex > input {
+  height: 40px;
+  margin: 11px 0;
+}
+.d-flex > button {
+  width: 80px;
+  font-size: 16px;
+  height: 40px;
+  margin: 11px 0;
+}
 // home
 .home_container {
   // background-image : image-url('game_center.jpg');
