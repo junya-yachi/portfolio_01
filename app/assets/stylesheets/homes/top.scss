@@ -110,8 +110,6 @@ body {
   background-color: gray;
   margin          : auto;
 }
-// .home_title {
-// }
 .home_title > h1 {
   color: #fff;
 }
@@ -125,6 +123,14 @@ body {
 }
 .home_title > p {
   color: #fff;
+}
+.main_item {
+  text-align: center;
+  width: 300px;
+  border-radius: 16px;
+  background   : #EBECF0;
+  box-shadow   : 5px 5px 20px #c8c9cc,
+                -5px -5px 20px #ffffff;
 }
 // FOOTER
 .wrapper {
