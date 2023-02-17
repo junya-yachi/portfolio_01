@@ -44,6 +44,20 @@
                 <button class="btn btn-outline-success" type="submit">検索</button>
                 <%# ransackでの検索フォーム %>
               </form>
+              <div class="nav-item">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><%= current_user.name %></a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <%= link_to '編集', homes_top_path, css: 'dropdown-item' %>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li>
+                    <%= link_to 'ログアウト', homes_top_path, css: 'dropdown-item' %>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </nav>
