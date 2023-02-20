@@ -19,3 +19,5 @@ require("custom")
 
 import 'bootstrap'
 import './src/application.scss'
+//= require jquery
+//= require jquery_ujs
