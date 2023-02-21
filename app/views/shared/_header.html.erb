@@ -20,44 +20,31 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
+                <li class="nav-item items">
                   <%= link_to 'ホーム', homes_top_path, class: 'nav-link active' %>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item items">
                   <%= link_to '在庫管理', homes_top_path, class: 'nav-link' %>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item items">
                   <%= link_to '売上一覧', homes_top_path, class: 'nav-link' %>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item items">
                   <%= link_to '発注', homes_top_path, class: 'nav-link' %>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item items">
                   <%= link_to '編集', homes_top_path, class: 'nav-link' %>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item items">
                   <%= link_to 'ログアウト', homes_top_path, class: 'nav-link' %>
                 </li>
               </ul>
               <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">検索</button>
+                <div><%= current_user.name %></div>
                 <%# ransackでの検索フォーム %>
               </form>
-              <div class="nav-item">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><%= current_user.name %></a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
-                    <%= link_to '編集', homes_top_path, css: 'dropdown-item' %>
-                  </li>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                  <li>
-                    <%= link_to 'ログアウト', homes_top_path, css: 'dropdown-item' %>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
         </nav>
