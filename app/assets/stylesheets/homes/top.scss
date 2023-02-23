@@ -16,15 +16,6 @@ body {
 .navbar-expand-lg {
   padding: 0;
 }
-// .top_bar {
-
-// }
-// .top_container {
-
-// }
-// .top_row {
-
-// }
 .top_right {
   height : 70px;
   float  : right;
@@ -69,14 +60,7 @@ body {
   height   : 40px;
   margin   : 11px 0;
 }
-// .top_name {
-//   width: 36px;
-// }
-// home
 .home_container {
-  // background-image : image-url('game_center.jpg');
-  // background-size  : cover;
-  // background-repeat: no-repeat;
   width            : 100%;
   margin           : 100px 0;
 }
@@ -112,17 +96,17 @@ main {
   position: relative;
 }
 .main_item {
-  position     : absolute;
-  display: flex;
+  position       : absolute;
+  display        : flex;
   justify-content: center;
-  align-items: center;
-  width        : 300px;
-  height       : 100px;
-  border-radius: 16px;
-  background   : #e8e8e8;
-  border       : 1px solid #e8e8e8;
-  box-shadow   : 5px 5px 20px #c8c9cc,
-                -5px -5px 20px #ffffff;
+  align-items    : center;
+  width          : 300px;
+  height         : 100px;
+  border-radius  : 16px;
+  background     : #e8e8e8;
+  border         : 1px solid #e8e8e8;
+  box-shadow     : 5px 5px 20px #c8c9cc,
+                  -5px -5px 20px #ffffff;
 }
 .main_item > p {
   margin-bottom: 0;

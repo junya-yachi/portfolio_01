@@ -1,7 +1,7 @@
+// sign_up
 .user_container {
-  background: #f6f8f9;
+  margin-top: 100px;
 }
-
 .user_form {
   background  : #fff;
   max-width   : 880px;
@@ -10,7 +10,6 @@
   padding     : 32px;
   border      : 1px solid #eaedef
 }
-
 .user_form_complete {
   background  : #fff;
   max-width   : 880px;
@@ -20,18 +19,17 @@
   border      : 1px solid #eaedef;
   text-align  : center;
 }
-
 .input-wrap {
   position: relative;
 }
-
 .toggle-pass {
   position: absolute;
   top: 57%;
   left: 14%;
   transform: translateY(-50%);
 }
-
 .sign_up_confirm {
   background: #f6f8f9;
 }
+// sign_in
+
