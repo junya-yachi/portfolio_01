@@ -22,18 +22,26 @@ body {
   display: flex;
 }
 .log_in_btn {
+  // justify-content: center;
+  // align-items: center;
+  margin-right : 8px;
   border-radius: 0.5em;
   background   : #e8e8e8;
   border       : 1px solid #e8e8e8;
   box-shadow   : 6px 6px 12px #c5c5c5,
                 -6px -6px 12px #ffffff;
+  text-decoration: none;
 }
 .sign_up_btn {
+  // justify-content: center;
+  // align-items: center;
+  margin-right: 8px;
   border-radius: 0.5em;
   background   : #e8e8e8;
   border       : 1px solid #e8e8e8;
   box-shadow   : 6px 6px 12px #c5c5c5,
                 -6px -6px 12px #ffffff;
+  text-decoration: none;
 }
 .items {
   width        : 104px;
