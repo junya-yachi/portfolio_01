@@ -22,8 +22,7 @@ body {
   display: flex;
 }
 .log_in_btn {
-  // justify-content: center;
-  // align-items: center;
+  line-height: 68px;
   margin-right : 8px;
   border-radius: 0.5em;
   background   : #e8e8e8;
@@ -33,8 +32,7 @@ body {
   text-decoration: none;
 }
 .sign_up_btn {
-  // justify-content: center;
-  // align-items: center;
+  line-height: 68px;
   margin-right: 8px;
   border-radius: 0.5em;
   background   : #e8e8e8;
@@ -69,6 +67,7 @@ body {
   margin   : 11px 0;
 }
 .home_container {
+  background-image : url(app/assets/images/game_center.jpg);
   width            : 100%;
   margin           : 100px 0;
 }
@@ -129,18 +128,22 @@ main {
   margin-right: 150px;
 }
 .main_item_3 {
-  text-align   : center;
-  width        : 300px;
-  height       : 100px;
-  border-radius: 16px;
-  background   : #e8e8e8;
-  border       : 1px solid #e8e8e8;
-  box-shadow   : 5px 5px 20px #c8c9cc,
-                -5px -5px 20px #ffffff;
-  top: 320px;
-  right: calc(50% - 150px);
+  position       : absolute;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  text-align     : center;
+  width          : 300px;
+  height         : 100px;
+  color          : #fff;
+  background     : #24b4fb;
+  border         : 1px solid #0071e2;
+  top            : 320px;
+  right          : calc(50% - 150px);
 }
-
+.main_item_3 > p {
+  margin-bottom: 0px;
+}
 // FOOTER
 .wrapper {
   min-height: 75vh;
