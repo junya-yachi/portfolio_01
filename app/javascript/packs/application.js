@@ -8,6 +8,7 @@ import "../src/style.scss";
 require('jquery');
 require('bootstrap');
 require('custom/header.js');
+require('custom/top.js');
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

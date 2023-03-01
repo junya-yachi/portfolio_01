@@ -101,6 +101,7 @@ main {
 }
 .top_main_container {
   position: relative;
+  height: 1000px;
 }
 .main_item {
   position       : absolute;
@@ -127,15 +128,11 @@ main {
   top         : 160px;
   margin-right: 150px;
 }
-// .img_box {
-//   position: absolute;
-//   right: calc(50% - 200px);
-// }
 .ufo_png {
-  position: absolute;
-  right: calc(50% - 200px);
-  width: 50%;
-  height: 50%;
+  display: block;
+  margin: auto;
+  width: 510px;
+  height: auto;
 }
 .main_item_3 {
   position       : absolute;
@@ -148,10 +145,11 @@ main {
   color          : #fff;
   background     : #24b4fb;
   border         : 1px solid #0071e2;
-  top            : 320px;
+  top            : 500px;
   right          : calc(50% - 150px);
 }
 .main_item_3 > p {
+  font-size: 24px;
   margin-bottom: 0px;
 }
 // FOOTER
