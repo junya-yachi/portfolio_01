@@ -8,6 +8,8 @@ $(function(){
   });
 });
 
+
+
 // $(function () {
 //   $(".main_item_3").css("color", "#0000FF");
 // }); //jqeuryは成功している

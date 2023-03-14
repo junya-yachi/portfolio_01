@@ -131,8 +131,9 @@ main {
 .ufo_png {
   display: block;
   margin: auto;
-  width: 510px;
+  width : 510px;
   height: auto;
+  bottom: 500px;
 }
 .main_item_3 {
   position       : absolute;
@@ -152,14 +153,6 @@ main {
   font-size: 24px;
   margin-bottom: 0px;
 }
-// .fadeInUpTrigger {
-//   opacity:0;
-// }
-// .animate__fadeInUp {
-//   opacity: 1;
-// }
-
-// FOOTER
 .wrapper {
   min-height: 75vh;
   position  : relative;
