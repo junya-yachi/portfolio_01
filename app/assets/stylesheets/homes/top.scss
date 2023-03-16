@@ -67,9 +67,19 @@ body {
   margin   : 11px 0;
 }
 .home_container {
-  background-image : url(app/assets/images/game_center.jpg);
+  // background-image : url("");
   width            : 100%;
   margin           : 100px 0;
+  position: relative;
+}
+.ufo_png {
+  position: absolute;
+  display: block;
+  margin: auto;
+  width : 750px;
+  height: auto;
+  bottom: 0px;
+  right          : calc(50% - 375px);
 }
 .home_box {
   display         : flex;
@@ -81,6 +91,7 @@ body {
   text-align      : center;
   background-color: gray;
   margin          : auto;
+  top: 100px;
 }
 .home_title > h1 {
   color: #fff;
@@ -97,6 +108,7 @@ body {
   color: #fff;
 }
 main {
+  margin-top: 40px;
   height: 400px;
 }
 .top_main_container {
@@ -128,13 +140,6 @@ main {
   top         : 160px;
   margin-right: 150px;
 }
-.ufo_png {
-  display: block;
-  margin: auto;
-  width : 510px;
-  height: auto;
-  bottom: 500px;
-}
 .main_item_3 {
   position       : absolute;
   display        : flex;
@@ -146,7 +151,7 @@ main {
   color          : #fff;
   background     : #24b4fb;
   border         : 1px solid #0071e2;
-  top            : 500px;
+  top            : 300px;
   right          : calc(50% - 150px);
 }
 .main_item_3 > p {
