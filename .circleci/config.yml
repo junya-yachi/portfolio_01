@@ -22,7 +22,9 @@ jobs:
       - run:
           name: Setup database
           command: |
-            docker-compose exec app bash -c
+# docker-compose exec app bash -c ''左に何か入るらしい…
+            bundle exec rake db:create
+            bundle exec rake db:schema:load
       - run:
           name: Run rspec
           command: docker-compose exec app rspec
