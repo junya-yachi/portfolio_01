@@ -1,24 +1,24 @@
 <section class="product_container">
-  <div><p>商品登録画面</p></div>
+  <div><h2>商品登録画面</h2></div>
   <%= form_with model: @product, url: products_new_path, local: true do |f| %>
-    <div class="field">
-      <%= f.label :order_date %>
-      <%= f.text_field :order_date, autofocus: :true, autocomplete: 'order_date', placeholder: '発注日' %>
+    <div class="product_new_field">
+      <%= f.label :order_date, '発注日' %>
+      <%= f.date_field :order_date, autofocus: :true, autocomplete: 'order_date' %>
     </div>
-    <div class="field">
-      <%= f.label :product_name %>
-      <%= f.text_field :product_name, autofocus: :true, autocomplete: 'product_name', placeholder: '商品名' %>
+    <div class="product_new_field">
+      <%= f.label :product_name, '商品名' %>
+      <%= f.text_field :product_name, autofocus: :true, autocomplete: 'product_name', placeholder: '正式名称＋空白は半角' %>
     </div>
-    <div class="field">
-      <%= f.label :product_price %>
-      <%= f.text_field :product_price, autofocus: :true, autocomplete: 'product_price', placeholder: '金額' %>
+    <div class="product_new_field">
+      <%= f.label :product_price, '金額' %>
+      <%= f.text_field :product_price, autofocus: :true, autocomplete: 'product_price' %>
     </div>
-    <div class="field">
-      <%= f.label :product_quantity %>
-      <%= f.text_field :product_quantity, autofocus: :true, autocomplete: 'product_quantity', placeholder: '数量' %>
+    <div class="product_new_field">
+      <%= f.label :product_quantity, '数量' %>
+      <%= f.text_field :product_quantity, autofocus: :true, autocomplete: 'product_quantity' %>
     </div>
-    <div class="field">
-      <%= f.label :product_type %>
+    <div class="product_new_field">
+      <%= f.label :product_type, '種類' %>
       <%= f.text_field :product_type, autofocus: :true, autocomplete: 'product_type', placeholder: '種類' %>
     </div>
     <div class="actions">
