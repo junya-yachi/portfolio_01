@@ -1,6 +1,14 @@
+// new
 .product_new_field {
   width: 300px;
   display: flex;
   justify-content: space-between;
   border: 1px bold #000;
+  margin-bottom: 4px;
+}
+.product_registration {
+  vertical-align: bottom;
+}
+.product_registration > p {
+  vertical-align: bottom;
 }

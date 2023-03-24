@@ -1,6 +1,6 @@
 <section class="product_container">
   <div><h2>商品登録画面</h2></div>
-  <%= form_with model: @product, url: products_new_path, local: true do |f| %>
+  <%= form_with model: @product, url: products_confirm_path(@product), local: true do |f| %>
     <div class="product_new_field">
       <%= f.label :order_date, '発注日' %>
       <%= f.date_field :order_date, autofocus: :true, autocomplete: 'order_date' %>
@@ -19,10 +19,10 @@
     </div>
     <div class="product_new_field">
       <%= f.label :product_type, '種類' %>
-      <%= f.text_field :product_type, autofocus: :true, autocomplete: 'product_type', placeholder: '種類' %>
+      <%= f.select :product_type, [['ぬいぐるみ', 1], ['雑貨',2], ['その他一般系',3], ['フィギュア',4], ['その他コア系',5], ['食品',6], ['その他',7]], {include_blank: true} %>
     </div>
     <div class="actions">
-      <%= f.submit '登録する' %>
+      <%= f.submit '確認画面へ' %>
     </div>
   <% end %>
 </section>

@@ -1,0 +1,29 @@
+<section class="product_container">
+  <div><h2>商品登録確認画面</h2></div>
+  <%= form_with(model: resource, scope: resource_name, url: product_path(resource_name) ) %>
+    <div class="product_new_field">
+      <%= f.label :order_date, '発注日' %>
+      <%= f.text_field :order_date, value: product.order_date, readonly: true %>
+    </div>
+    <div class="product_new_field">
+      <%= f.label :product_name, '商品名' %>
+      <%= f.text_field :product_name, value: product.product_name, readonly: true %>
+    </div>
+    <div class="product_new_field">
+      <%= f.label :product_price, '金額' %>
+      <%= f.text_field :product_price, value: product.product_price, readonly: true %>
+    </div>
+    <div class="product_new_field">
+      <%= f.label :product_quantity, '数量' %>
+      <%= f.text_field, :product_quantity, value: product.product_quantity, readonly: true %>
+    </div>
+    <div class="product_new_field">
+      <%= f.label :product_type, '種類' %>
+      <%= f.select :product_type, [['ぬいぐるみ', 1], ['雑貨',2], ['その他一般系',3], ['フィギュア',4], ['その他コア系',5], ['食品',6], ['その他',7]], value: product.product_type, readonly: true %>
+    </div>
+    <div class="product_new_field">
+      <%= f.submit t('.back'), name: :back %><br />
+      <%= f.submit t('登録する') %>
+    </div>
+  <% end %>
+</section>
