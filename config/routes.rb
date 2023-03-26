@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :products
-  get 'products/confirm'
+  post 'products/confirm'
   # get 'products/index'
   get 'homes/top'
   devise_for :users, controllers: {

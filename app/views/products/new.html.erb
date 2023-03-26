@@ -1,6 +1,7 @@
 <section class="product_container">
   <div><h2>商品登録画面</h2></div>
   <%= form_with model: @product, url: products_confirm_path(@product), local: true do |f| %>
+    <p><%= render "shared/error_message", obj:@product %> </p>
     <div class="product_new_field">
       <%= f.label :order_date, '発注日' %>
       <%= f.date_field :order_date, autofocus: :true, autocomplete: 'order_date' %>

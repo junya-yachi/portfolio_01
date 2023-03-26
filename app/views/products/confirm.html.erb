@@ -22,7 +22,7 @@
       <%= f.select :product_type, [['ぬいぐるみ', 1], ['雑貨',2], ['その他一般系',3], ['フィギュア',4], ['その他コア系',5], ['食品',6], ['その他',7]], value: product.product_type, readonly: true %>
     </div>
     <div class="product_new_field">
-      <%= f.submit t('.back'), name: :back %><br />
+      <%= f.submit t('修正する'), name: :back %><br />
       <%= f.submit t('登録する') %>
     </div>
   <% end %>
