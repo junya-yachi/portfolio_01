@@ -1,21 +1,34 @@
 <section class="product_container">
+  <% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
   <div class="product_box">
     <h1>商品一覧</h1>
-    <div class="product_registration">
-      <p><%= link_to '商品新規登録', new_product_path %></p>
-    </div>
   </div>
   <div>
-    <tbody>
-      <%= @products.each do |product| %>
+    <table>
+      <tbody class="product_table">
         <tr>
-          <td><%= product.name %></td>
-          <td><%= product.date %></td>
-          <td><%= product.price %></td>
-          <td><%= product.quantity %></td>
+          <th>商品名</th>
+          <th>種類</th>
+          <th>発注日</th>
+          <th>金額</th>
+          <th>数量</th>
         </tr>
-      <% end %>
-    </tbody>
+        <% @products.each do |product| %>
+          <tr>
+            <td><%= product.product_name %></td>
+            <td><%= product.product_type %></td>
+            <td><%= product.order_date %></td>
+            <td><%= product.product_price %></td>
+            <td><%= product.product_quantity %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <button class="product_registration">
+    <button><%= link_to '商品新規登録', new_product_path %></div>
   </div>
 
 </section>
