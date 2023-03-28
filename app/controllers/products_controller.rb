@@ -7,15 +7,18 @@ class ProductsController < ApplicationController
   end
   def create
     @product = Product.new(product_params)
-    if @product.save
-      flash[:notice] = "商品を新規登録しました"
-      redirect_to products_path
-    elsif params[:back]
-      render :new
-    else
-      render :index
+    # if @product.save
+    #   flash[:notice] = "商品を新規登録しました"
+    #   redirect_to products_path
+    # elsif params[:back]
+    #   render :new
+    # else
+    #   render :index
+    # end
+    if params[:back] || !@product.save 
+      render :new and return
+    redirect_to root_path
     end
-    # render :new and return if params[:back]
   end
   def confirm
     @product = Product.new(product_params)

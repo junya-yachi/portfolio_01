@@ -19,11 +19,11 @@
     </div>
     <div class="product_new_field">
       <%= f.label :product_type, '種類' %>
-      <%= f.hidden_field :product_type, value: @product.product_type, readonly: true %>
+      <%= f.text_field :product_type, { ぬいぐるみ: 1,  雑貨:2,  その他一般系:3,  フィギュア:4,  その他コア系:5,  食品:6,  その他:7}, {include_blank: true}, value: @product.product_type %>
     </div>
     <div>
-      <%= f.submit t('修正する'), name: :back %><br />
-      <%= f.submit t('登録する') %>
+      <%= f.submit '修正する', name: :back %><br />
+      <%= f.submit '登録する' %>
     </div>
   <% end %>
 </section>
