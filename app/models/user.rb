@@ -5,4 +5,5 @@ class User < ApplicationRecord
   validates :email, length: { maximum: 256 }
 
   has_many :product
+  has_many :client
 end
