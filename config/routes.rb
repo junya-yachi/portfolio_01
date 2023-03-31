@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'clients/index'
+  get 'clients/new'
+  resources :clients
   resources :products do
     collection do
       post :confirm
