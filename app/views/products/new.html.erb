@@ -22,6 +22,9 @@
       <%= f.label :product_type, '種類' %>
       <%= f.select :product_type, { ぬいぐるみ: 1, 雑貨: 2, その他一般系: 3, フィギュア: 4, その他コア系: 5, 食品: 6, その他: 7}, {include_blank: true} %>
     </div>
+    <div>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+    </div>
     <div class="actions">
       <%= f.submit '確認画面へ' %>
     </div>

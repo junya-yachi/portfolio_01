@@ -22,6 +22,9 @@
       <%= f.select :product_type, { ぬいぐるみ: 1, 雑貨: 2, その他一般系: 3, フィギュア: 4, その他コア系: 5, 食品: 6, その他: 7}, {disabled: @product.product_type}, value: @product.product_type %>
     </div>
     <div>
+      <%= f.hidden_field :user_id, value: @product.user_id %>
+    </div>
+    <div>
       <%= f.submit '修正する', name: :back %><br />
       <%= f.submit '登録する' %>
     </div>
