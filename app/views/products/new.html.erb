@@ -1,0 +1,32 @@
+<section class="product_container">
+  <div><h2>商品登録画面</h2></div>
+  <%= form_with model: @product, url: confirm_products_path(@product), local: true do |f| %>
+    <p><%= render "shared/error_message", obj:@product %> </p>
+    <div class="product_new_field">
+      <%= f.label :order_date, '発注日' %>
+      <%= f.date_field :order_date, autofocus: :true, autocomplete: 'order_date' %>
+    </div>
+    <div class="product_new_field">
+      <%= f.label :product_name, '商品名' %>
+      <%= f.text_field :product_name, autofocus: :true, autocomplete: 'product_name', placeholder: '正式名称（空白は半角）' %>
+    </div>
+    <div class="product_new_field">
+      <%= f.label :product_price, '金額' %>
+      <%= f.text_field :product_price, autofocus: :true, autocomplete: 'product_price', placeholder: '半角英数字' %>
+    </div>
+    <div class="product_new_field">
+      <%= f.label :product_quantity, '数量' %>
+      <%= f.text_field :product_quantity, autofocus: :true, autocomplete: 'product_quantity', placeholder: '半角英数字' %>
+    </div>
+    <div class="product_new_field">
+      <%= f.label :product_type, '種類' %>
+      <%= f.select :product_type, { ぬいぐるみ: 1, 雑貨: 2, その他一般系: 3, フィギュア: 4, その他コア系: 5, 食品: 6, その他: 7}, {include_blank: true} %>
+    </div>
+    <div>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+    </div>
+    <div class="actions">
+      <%= f.submit '確認画面へ' %>
+    </div>
+  <% end %>
+</section>

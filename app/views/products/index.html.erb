@@ -1,7 +1,41 @@
 <section class="product_container">
-  
+  <% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
+  <div class="product_box">
+    <h1>商品一覧</h1>
+  </div>
+  <div>
+    <table>
+      <tbody class="product_table">
+        <tr>
+          <th>商品名</th>
+          <th>種類</th>
+          <th>発注日</th>
+          <th>金額</th>
+          <th>数量</th>
+        </tr>
+        <% @products.each do |product| %>
+          <tr>
+            <td><%= product.product_name %></td>
+            <td><%= product.product_type %></td>
+            <td><%= product.order_date %></td>
+            <td><%= product.product_price %></td>
+            <td><%= product.product_quantity %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <%= link_to new_product_path do %>
+    <button class="product_registration">
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z"></path>
+          <path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path>
+        </svg>
+        商品新規登録
+      </span>
+    </button>
+  <% end %>
 </section>
-
-
-<h1>Products#product::index</h1>
-<p>Find me in app/views/products/product::index.html.erb</p>

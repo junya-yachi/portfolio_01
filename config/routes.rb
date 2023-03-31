@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  get 'products/index'
+  resources :products do
+    collection do
+      post :confirm
+    end
+  end
   get 'homes/top'
   devise_for :users, controllers: {
     registrations: 'users/registrations',

@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_17_053428) do
+ActiveRecord::Schema.define(version: 2023_03_31_043153) do
+
+  create_table "clients", charset: "utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "cilent_name"
+    t.string "phone_num"
+    t.string "client_email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "inventories", charset: "utf8", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "acutual_inventory"
+    t.integer "forecast_stock"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "product_clients", charset: "utf8", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "client_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "products", charset: "utf8", force: :cascade do |t|
     t.date "order_date"
@@ -20,6 +44,9 @@ ActiveRecord::Schema.define(version: 2023_03_17_053428) do
     t.string "product_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "client_id"
+    t.integer "purchase_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
