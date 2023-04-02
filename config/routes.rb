@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'clients/index'
-  get 'clients/new'
-  resources :clients
+  resources :clients do
+    collection do
+      post :confirm
+    end
+  end
   resources :products do
     collection do
       post :confirm

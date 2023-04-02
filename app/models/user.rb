@@ -3,7 +3,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name, presence: true
   validates :email, length: { maximum: 256 }
-
-  has_many :product
-  has_many :client
+  has_many  :product
+  has_many  :client
 end
