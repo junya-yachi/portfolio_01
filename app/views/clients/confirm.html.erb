@@ -7,10 +7,10 @@
     </div>
     <div class="client_new_field">
       <%= f.label :phone_num, '電話番号' %>
-      <%= f.text_field :phone_num, value: @client.phone_num, readonly: true %>
+      <%= f.text_field :phone_num, value: @client.phone_num.tr("０-９", "0-9"), readonly: true %>
     </div>
     <div class="client_new_field">
-      <%= f.label :client_email, '金額' %>
+      <%= f.label :client_email, 'メールアドレス' %>
       <%= f.text_field :client_email, value: @client.client_email, readonly: true %>
     </div>
     <div>
