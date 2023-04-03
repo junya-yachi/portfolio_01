@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 RSpec.describe 'User', type: :model do
   describe 'ユーザー登録のテスト' do
     let(:user) { create(:user) }
