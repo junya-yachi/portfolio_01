@@ -1,7 +1,9 @@
 <section class="client_container">
-  <h1>取引先一覧</h1>
-    <div class="client_box">
-    <h1>商品一覧</h1>
+    <% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
+  <div class="client_box">
+    <h1>取引先一覧</h1>
   </div>
   <div>
     <table>
@@ -13,7 +15,7 @@
         </tr>
         <% @clients.each do |client| %>
           <tr>
-            <td><%= client.client_name %></td>
+            <td><%= client.cilent_name %></td>
             <td><%= client.phone_num %></td>
             <td><%= client.client_email %></td>
           </tr>

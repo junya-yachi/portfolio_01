@@ -7,8 +7,12 @@
   margin-bottom  : 4px;
 }
 .client_registration {
-  vertical-align: bottom;
+  vertical-align : bottom;
 }
 .client_registration > p {
-  vertical-align: bottom;
+  vertical-align : bottom;
 }
+.client_new_field input {
+  text-align     : right;
+}
+
