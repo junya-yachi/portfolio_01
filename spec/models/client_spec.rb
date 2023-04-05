@@ -1,7 +1,8 @@
 require 'rails_helper'
 RSpec.describe 'Client', type: :model do
   describe '取引先登録のテスト' do
-    let(:client) { create(:client) }
+    let(:client) { create(:client, user_id: user.id) }
+    let!(:user) { create(:user) }
     context "登録が完了出来る場合のテスト" do
       it "登録完了(正常)" do
         expect(client).to be_valid
