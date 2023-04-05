@@ -1,9 +1,11 @@
 require 'rails_helper'
 RSpec.describe "Clients", type: :request do
   let(:user) { create(:user) }
+
   before do
     sign_in user
   end
+
   describe "GET /index" do
     context "GET /clientsの場合" do
       it "成功すること" do
@@ -12,6 +14,7 @@ RSpec.describe "Clients", type: :request do
       end
     end
   end
+
   describe "GET /new" do
     context "GET /clients/newの場合" do
       it "成功すること" do
@@ -20,5 +23,4 @@ RSpec.describe "Clients", type: :request do
       end
     end
   end
-
 end

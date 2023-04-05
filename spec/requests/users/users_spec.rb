@@ -8,8 +8,10 @@ RSpec.describe 'Users', type: :request do
       end
     end
   end
+
   describe "GET /users" do
     let!(:user) { create(:user) }
+
     context "GET/users/sign_upの場合" do
       it "成功すること" do
         get new_user_registration_path

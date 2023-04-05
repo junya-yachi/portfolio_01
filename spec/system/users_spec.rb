@@ -1,8 +1,6 @@
 require 'rails_helper'
 RSpec.describe 'Users', type: :system do
-
   describe 'ユーザー登録のテスト' do
-
     before do
       # 新規登録ページへ移動する
       visit new_user_registration_path
@@ -12,6 +10,7 @@ RSpec.describe 'Users', type: :system do
       fill_in 'user[password]', with: 'password'
       fill_in 'user[password_confirmation]', with: 'password'
     end
+
     context "ユーザーの新規登録が出来る場合" do
       it '入力画面が表示されること' do
         expect(page).to have_css '.user_container'
@@ -36,6 +35,7 @@ RSpec.describe 'Users', type: :system do
         expect(page).to have_css '.user_container'
       end
     end
+
     context 'ユーザーの新規登録が出来ない場合' do
       context '必要事項を誤入力し登録確認画面に移動せずに戻ってくる場合' do
         it 'nameが空欄で登録に失敗すること' do
