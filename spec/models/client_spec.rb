@@ -2,7 +2,7 @@ require 'rails_helper'
 RSpec.describe 'Client', type: :model do
   describe '取引先登録のテスト' do
     let(:client) { create(:client, user_id: user.id) }
-    let!(:user) { create(:user) 
+    let!(:user) { create(:user) }
 
     context "登録が完了出来る場合のテスト" do
       it "登録完了(正常)" do
@@ -25,6 +25,11 @@ RSpec.describe 'Client', type: :model do
         client.client_email = ''
         client.valid?
         expect(client.errors).to be_of_kind(:client_email, :blank)
+      end
+      it "@記入のないメールアドレスは登録出来ないこと" do
+        client.client_email = Faker::Lorem.characters(number: 16, min_alpha: 16)
+        client.valid?
+        expect(client.errors).to be_of_kind(:client_email, :invalid)
       end
     end
   end
