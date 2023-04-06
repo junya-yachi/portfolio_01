@@ -16,20 +16,15 @@ RSpec.describe 'Users', type: :system do
         expect(page).to have_css '.user_container'
       end
       it '必要事項を入力し、登録情報確認画面へ移動すること' do
-        # 入力確認ボタンを押す
         click_button '入力確認'
-        # 確認画面へ移動する
         expect(page).to have_css '.sign_up_confirm'
       end
       it '必要事項を入力し、登録確認画面へ移動し、新規登録が完了すること' do
-        # 入力確認ボタンを押す
         click_button '入力確認'
-        # 新規アカウント作成ボタンを押す
         click_button '新規アカウント作成'
         expect(page).to have_selector 'h2', text: '登録が完了しました。'
       end
       it '必要事項を入力し、登録確認画面へ移動し、修正のため入力画面に戻ってくること' do
-        # 入力確認ボタンを押す
         click_button '入力確認'
         click_button '修正する'
         expect(page).to have_css '.user_container'
