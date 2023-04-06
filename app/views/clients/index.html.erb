@@ -23,7 +23,8 @@
       </tbody>
     </table>
   </div>
-  <%= link_to new_client_path do %>
+      <%= link_to new_client_path, 
+:onclick=>"window.open(this.href,'hoge', 'height=400, width=800');return false;", rel: "noopener noreferrer" do %>
     <button class="client_registration">
       <span>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">

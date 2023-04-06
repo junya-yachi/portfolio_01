@@ -13,8 +13,7 @@ class ClientsController < ApplicationController
       render :new and return
       redirect_to root_path
     elsif @client.save
-      flash[:notice] = "取引先を新規登録しました"
-      redirect_to clients_path
+      redirect_to complete_clients_path
     end
   end
 

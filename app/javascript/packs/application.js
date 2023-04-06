@@ -9,6 +9,7 @@ require('jquery');
 require('bootstrap');
 require('custom/header.js');
 require('custom/top.js');
+require('custom/client.js');
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
