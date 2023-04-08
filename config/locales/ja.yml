@@ -19,3 +19,12 @@ ja:
         name: 店舗名
         image: アイコン
         self_intro: 自己紹介
+
+  activerecord:
+    models:
+      client: 取引先
+    attributes:
+      client:
+        cilent_name: 企業名
+        phone_num: 電話番号
+        client_email: メールアドレス
