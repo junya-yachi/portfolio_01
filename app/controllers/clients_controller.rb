@@ -25,6 +25,16 @@ class ClientsController < ApplicationController
     end
   end
 
+  def edit
+    @client = Client.find(params[:id])
+  end
+
+  def update
+    @client = Client.update(client_params)
+    flash[:notice] = "ユーザIDが「#{@client.id}の情報を更新しました」"
+    redirect_to complete_clients_path
+  end
+
   private
 
   def client_params
