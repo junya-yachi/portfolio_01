@@ -41,7 +41,27 @@ RSpec.describe "Clients", type: :system do
         it "cilent_nameが空欄で登録に失敗すること" do
           fill_in 'client[cilent_name]', with: ''
           click_button '確認画面へ'
-          expect(page). have_selector 'li', text: '企業名を入力してください'
+          expect(page).to have_selector 'li', text: '企業名を入力してください'
+        end
+        it "phone_numが空欄で登録に失敗すること" do
+          fill_in 'client[phone_num]', with: ''
+          click_button '確認画面へ'
+          expect(page).to have_selector 'li', text: '電話番号を入力してください'
+        end
+        it "phone_numが数字以外の入力で登録に失敗すること" do
+          fill_in 'client[phone_num]', with: Faker::Alphanumeric.alpha(number: 10)
+          click_button '確認画面へ'
+          expect(page).to have_selector 'li', text: '電話番号は数値で入力してください'
+        end
+        it "client_emailが空欄で登録に失敗すること" do
+          fill_in 'client[client_email]', with: ''
+          click_button '確認画面へ'
+          expect(page).to have_selector 'li', text: 'メールアドレスを入力してください'
+        end
+        it "client_emailが「@」が未入力で登録に失敗すること" do
+          fill_in 'client[client_email]', with: ''
+          click_button '確認画面へ'
+          expect(page).to have_selector 'li', text: 'メールアドレスを入力してください'
         end
       end
     end
