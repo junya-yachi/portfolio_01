@@ -13,6 +13,7 @@ class ClientsController < ApplicationController
       render :new and return
       redirect_to root_path
     elsif @client.save
+      flash[:notice] = "新規取引先企業を登録しました"
       redirect_to complete_clients_path
     end
   end
@@ -28,10 +29,11 @@ class ClientsController < ApplicationController
   def edit
     @client = Client.find(params[:id])
   end
-
+  
   def update
+    @client = Client.find(params[:id])
     @client = Client.update(client_params)
-    flash[:notice] = "ユーザIDが「#{@client.id}の情報を更新しました」"
+    flash[:notice] = "取引先企業の情報を更新しました"
     redirect_to complete_clients_path
   end
 

@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root :to => 'homes#top'
   resources :clients do
     collection do
-      # get 'clients/complete', to: 'clients#complete'
       get  :complete
       post :confirm
     end
