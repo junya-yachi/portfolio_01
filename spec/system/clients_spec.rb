@@ -83,19 +83,37 @@ RSpec.describe "Clients", type: :system do
       it "入力フォームにcilent_nameが入力されていること" do
         expect(page).to have_field '企業名', with: client.cilent_name
       end
-      it "入力フォームにcilent_nameが入力されていること" do
+      it "入力フォームにphone_numが入力されていること" do
         expect(page).to have_field '電話番号', with: client.phone_num
       end
-      it "入力フォームにcilent_nameが入力されていること" do
+      it "入力フォームにcilent_emailが入力されていること" do
         expect(page).to have_field 'メールアドレス', with: client.client_email
       end
       # it "記入事項を修正し、修正が完了すること" do
-      #   fill_in 'client[cilent_name]', with: "株式会社テスト"
+      #   fill_in 'cilent_name', with: "株式会社テスト"
       #   fill_in 'client[phone_num]', with: "111111111"
       #   fill_in 'client[client_email]', with: "test@email.com"
       #   click_button '修正する'
       #   expect(page).to have_css 'h2', text: '取引先企業'
       # end
+    end
+
+    context '取引先の更新が出来ない場合' do
+      it '入力フォームのcilent_nameが空欄で更新に失敗すること' do
+        fill_in 'client[cilent_name]', with: ''
+        expect(page).to have_selector 'li', text: '企業名を入力してください'
+      end
+      it '入力フォームのphone_numが空欄で更新に失敗すること' do
+        fill_in 'client[phone_num]', with: ''
+        expect(page).to have_selector 'li', text: '電話番号を入力してください'
+      end
+      it '入力フォームのclient_emailが空欄で更新に失敗すること' do
+        fill_in 'client[cilent_email]', with: ''
+        expect(page).to have_selector 'li', text: 'メールアドレスを入力してください'
+        
+        binding.pry
+        
+      end
     end
   end
 end

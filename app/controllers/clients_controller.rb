@@ -32,9 +32,14 @@ class ClientsController < ApplicationController
   
   def update
     @client = Client.find(params[:id])
-    @client = Client.update(client_params)
-    flash[:notice] = "取引先企業の情報を更新しました"
-    redirect_to complete_clients_path
+    if @client.update(client_params)
+      flash[:notice] = "取引先企業の情報を更新しました"
+      redirect_to complete_clients_path
+    else
+      render 'clients/edit'
+    end
+    # @client = Client.update(client_params)
+    # redirect_to complete_clients_path
   end
 
   private
