@@ -1,5 +1,22 @@
 require 'rails_helper'
 RSpec.describe "Clients", type: :system do
+  describe '取引先一覧のテスト' do
+    let(:user) { create(:user) }
+    let(:client) { create(:client, user_id: user.id) }
+    before do
+      # ユーザーのログインする
+      login(user)
+      # 取引先一覧画面へ移動する
+      visit clients_path
+    end
+    it '取引先一覧画面が表示されること' do
+      expect(page).to have_css '.client_box'
+    end
+    it "取引先新規登録ボタンで登録画面へ移動すること" do
+      click_button '取引先新規登録'
+      expect(page).to have_selector 'h2', text: '取引先登録画面'
+    end
+  end
   describe '取引先登録のテスト' do
     let(:user) { create(:user) }
     let(:client) { create(:client, user_id: user.id) }
@@ -89,30 +106,30 @@ RSpec.describe "Clients", type: :system do
       it "入力フォームにcilent_emailが入力されていること" do
         expect(page).to have_field 'メールアドレス', with: client.client_email
       end
-      # it "記入事項を修正し、修正が完了すること" do
-      #   fill_in 'cilent_name', with: "株式会社テスト"
-      #   fill_in 'client[phone_num]', with: "111111111"
-      #   fill_in 'client[client_email]', with: "test@email.com"
-      #   click_button '修正する'
-      #   expect(page).to have_css 'h2', text: '取引先企業'
-      # end
+      it "記入事項を修正し、修正が完了すること" do
+        fill_in 'client[cilent_name]', with: "株式会社テスト"
+        fill_in 'client[phone_num]', with: "111111111"
+        fill_in 'client[client_email]', with: "test@email.com"
+        click_button '修正する'
+        expect(page).to have_css 'h2', text: '取引先企業の情報を更新しました'
+      end
     end
 
     context '取引先の更新が出来ない場合' do
       it '入力フォームのcilent_nameが空欄で更新に失敗すること' do
         fill_in 'client[cilent_name]', with: ''
+        click_button '修正する'
         expect(page).to have_selector 'li', text: '企業名を入力してください'
       end
       it '入力フォームのphone_numが空欄で更新に失敗すること' do
         fill_in 'client[phone_num]', with: ''
+        click_button '修正する'
         expect(page).to have_selector 'li', text: '電話番号を入力してください'
       end
       it '入力フォームのclient_emailが空欄で更新に失敗すること' do
-        fill_in 'client[cilent_email]', with: ''
+        fill_in 'client[client_email]', with: ''
+        click_button '修正する'
         expect(page).to have_selector 'li', text: 'メールアドレスを入力してください'
-        
-        binding.pry
-        
       end
     end
   end

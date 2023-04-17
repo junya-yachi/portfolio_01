@@ -38,8 +38,6 @@ class ClientsController < ApplicationController
     else
       render 'clients/edit'
     end
-    # @client = Client.update(client_params)
-    # redirect_to complete_clients_path
   end
 
   private
