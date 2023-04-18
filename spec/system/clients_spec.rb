@@ -14,6 +14,7 @@ RSpec.describe "Clients", type: :system do
     end
     it "取引先新規登録ボタンで登録画面へ移動すること" do
       click_button '取引先新規登録'
+      switch_to_window(windows.last)
       expect(page).to have_selector 'h2', text: '取引先登録画面'
     end
   end
