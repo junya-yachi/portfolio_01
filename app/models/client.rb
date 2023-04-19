@@ -1,6 +1,6 @@
 class Client < ApplicationRecord
   belongs_to :user
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   validates  :cilent_name,  presence: true
   validates  :phone_num,    presence: true,
                             length: { maximum: 20 },

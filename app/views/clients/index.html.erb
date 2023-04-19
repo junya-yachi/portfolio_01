@@ -18,7 +18,6 @@
             <td><%= client.cilent_name %></td>
             <td><%= client.phone_num %></td>
             <td><%= client.client_email %></td>
-            <td><%= client.user_id %></td>
             <td><%= link_to '編集', [:edit, client], :onclick=>"window.open(this.href,'hoge', 'height=400, width=800');return false;", rel: "noopener noreferrer" %></td>
           </tr>
         <% end %>
