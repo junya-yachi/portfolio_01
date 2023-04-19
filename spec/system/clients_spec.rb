@@ -2,7 +2,7 @@ require 'rails_helper'
 RSpec.describe "Clients", type: :system do
   describe '取引先一覧のテスト' do
     let(:user) { create(:user) }
-    let!(:client) { create(:client, user_id: user.id) }
+    let(:client) { create(:client, user_id: user.id) }
 
     before do
       # ユーザーのログインする
@@ -60,9 +60,8 @@ RSpec.describe "Clients", type: :system do
       it "取引先の「編集」リンクで編集画面に移動すること" do
         customer_registration(client)
         visit clients_path
-        # all('tr td')[1].click_link '編集'
         click_link '編集', match: :first
-        expect(page).to have_selector 'input', text: "#{client.cilent_name}"
+        expect(page).to have_selector 'h2', text: '取引先編集画面'
       end
     end
 
