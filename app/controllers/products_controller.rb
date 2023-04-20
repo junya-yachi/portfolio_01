@@ -2,9 +2,11 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
   end
+
   def new
     @product = Product.new
   end
+
   def create
     @product = Product.new(product_params)
     # if @product.save
@@ -15,11 +17,12 @@ class ProductsController < ApplicationController
     # else
     #   render :index
     # end
-    if params[:back] || !@product.save 
+    if params[:back] || !@product.save
       render :new and return
-    redirect_to root_path
+      redirect_to root_path
     end
   end
+
   def confirm
     @product = Product.new(product_params)
     if @product.invalid?
@@ -28,8 +31,10 @@ class ProductsController < ApplicationController
       return
     end
   end
+
   private
-    def product_params
-      params.require(:product).permit(:order_date, :product_name, :product_price, :product_quantity, :product_type, :user_id)
-    end
+
+  def product_params
+    params.require(:product).permit(:order_date, :product_name, :product_price, :product_quantity, :product_type, :user_id)
+  end
 end

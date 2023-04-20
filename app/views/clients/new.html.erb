@@ -1,0 +1,24 @@
+<section class="client_container">
+  <div><h2>取引先登録画面</h2></div>
+  <%= form_with model: @client, url: confirm_clients_path(@client), local: true do |f| %>
+    <p><%= render "shared/error_message", obj:@client %> </p>
+    <div class="client_new_field">
+      <%= f.label :cilent_name, '企業名' %>
+      <%= f.text_field :cilent_name, autofocus: :true, autocomplete: 'cilent_name' %>
+    </div>
+    <div class="client_new_field">
+      <%= f.label :phone_num, '電話番号' %>
+      <%= f.text_field :phone_num, autofocus: :true, autocomplete: 'phone_num', placeholder: '半角英数字のみ' %>
+    </div>
+    <div class="client_new_field">
+      <%= f.label :client_email, 'メールアドレス' %>
+      <%= f.text_field :client_email, autofocus: :true, autocomplete: 'client_email' %>
+    </div>
+    <div>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+    </div>
+    <div class="actions">
+      <%= f.submit '確認画面へ' %>
+    </div>
+  <% end %>
+</section>

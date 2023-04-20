@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  root :to => 'homes#top'
+  resources :clients do
+    collection do
+      get  :complete
+      post :confirm
+    end
+  end
   resources :products do
     collection do
       post :confirm

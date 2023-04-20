@@ -1,0 +1,24 @@
+<section class="client_container">
+  <div><h2>取引先登録確認画面</h2></div>
+  <%= form_with model: @client, url: clients_path do |f| %>
+    <div class="client_new_field">
+      <%= f.label :cilent_name, '企業名' %>
+      <%= f.text_field :cilent_name, value: @client.cilent_name, readonly: true %>
+    </div>
+    <div class="client_new_field">
+      <%= f.label :phone_num, '電話番号' %>
+      <%= f.text_field :phone_num, value: @client.phone_num.tr("０-９", "0-9"), readonly: true %>
+    </div>
+    <div class="client_new_field">
+      <%= f.label :client_email, 'メールアドレス' %>
+      <%= f.text_field :client_email, value: @client.client_email.downcase, readonly: true %>
+    </div>
+    <div>
+      <%= f.hidden_field :user_id, value: @client.user_id %>
+    </div>
+    <div>
+      <%= f.submit '修正する', name: :back %>
+      <%= f.submit '登録する', class: 'submit_btn' %>
+    </div>
+  <% end %>
+</section>
