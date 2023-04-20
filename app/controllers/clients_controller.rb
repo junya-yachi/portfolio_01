@@ -1,6 +1,8 @@
 class ClientsController < ApplicationController
   def index
-    @clients = Client.all
+    # @clients = Client.all
+    @user = current_user
+    @clients = Client.where(user_id: @user.id)
   end
 
   def new

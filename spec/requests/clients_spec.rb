@@ -2,6 +2,8 @@ require 'rails_helper'
 RSpec.describe "Clients", type: :request do
   let(:user) { create(:user) }
   let!(:client) {create(:client, user_id: user.id)}
+  let!(:another_user) { create(:user) }
+  let!(:another_client) { create(:client, user_id: another_user.id) }
 
   before do
     sign_in user
@@ -18,6 +20,10 @@ RSpec.describe "Clients", type: :request do
         expect(response.body).to include(client.cilent_name)
         expect(response.body).to include(client.phone_num)
         expect(response.body).to include(client.client_email)
+      end
+      it "another_userに紐づいたclientが表示されないこと" do
+        get clients_path
+        expect(response.body).not_to include(another_client.cilent_name)
       end
     end
   end
