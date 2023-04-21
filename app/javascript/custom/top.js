@@ -7,3 +7,25 @@ $(function(){
     }
   });
 });
+
+// $(function(){
+//   $('.top_name').hover(
+//     function() {
+//       $('.header_name_details').addClass('on_hover');
+//     },
+//     function() {
+//       $('.header_name_details').removeClass('on_hover');
+//     });
+// });
+
+$(function() {
+  $('.header_name_details').hide();
+  $('.header_user_box').hover(
+    function() {
+      $(this).children('.header_name_details').fadeIn('fast');
+    },
+    function() {
+      $(this).children('.header_name_details').fadeOut('fast');
+    });
+});
+

@@ -39,7 +39,12 @@
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">検索</button>
               </form>
-                <div class="top_name"><%= current_user.name %></div>
+                <div class="header_user_box">
+                  <div class="top_name"><%= current_user.name %></div>
+                  <div class="header_name_details">
+                    <%= current_user.email %>
+                  </div>
+                </div>
             </div>
           </div>
         </nav>
