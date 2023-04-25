@@ -1,0 +1,2 @@
+class UfoCatcher < ApplicationRecord
+end
