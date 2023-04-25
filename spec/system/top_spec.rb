@@ -29,6 +29,14 @@ RSpec.describe "Homes", type: :system do
         click_link '在庫管理'
         expect(page).to have_selector 'h1', text: "商品一覧"
       end
+      it "取引先一覧で取引先一覧ページへ移動すること" do
+        click_link '取引先一覧'
+        expect(page).to have_selector 'h1', text: "取引先一覧"
+      end
+      it "ログアウトに成功してホーム画面に移動すること" do
+        click_link 'ログアウト'
+        expect(page).to have_selector 'div', text: "ログイン"
+      end
     end
   end
 end
