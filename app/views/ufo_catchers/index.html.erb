@@ -1,1 +1,39 @@
-<h1>home_box</h1>
+<section class="ufo_container">
+  <% if flash[:notice] %>
+    <h2 class="notice"><%= flash[:notice] %></h2>
+  <% end %>
+  <div class="ufo_box">
+    <h1>UFOキャッチャー筐体一覧</h1>
+  </div>
+    <div>
+    <table>
+      <tbody class="ufo_table">
+        <tr>
+          <th>筐体名</th>
+          <th>種類</th>
+          <th>筐体ID</th>
+          <th>初期メーター</th>
+        </tr>
+        <% @ufo_catchers.each do |ufo_catcher| %>
+          <tr>
+            <td><%= ufo_catcher.machine_name %></td>
+            <td><%= ufo_catcher.machine_id %></td>
+            <td><%= ufo_catcher.machine_id %></td>
+            <td><%= ufo_catcher.credit_num %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <%= link_to new_ufo_catcher_path do %>
+    <button class="product_registration">
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z"></path>
+          <path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path>
+        </svg>
+        筐体新規登録
+      </span>
+    </button>
+  <% end %>
+</section>
