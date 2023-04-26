@@ -1,0 +1,24 @@
+<section class="ufo_container">
+    <div><h2>取引先登録画面</h2></div>
+  <%= form_with model: @ufo_catchers, url: confirm_ufo_catcherss_path(@ufo_catcher), local: true do |f| %>
+    <p><%= render "shared/error_message", obj:@ufo_catchers %> </p>
+    <div class="ufo_catchers_new_field">
+      <%= f.label :machine_name, '筐体名' %>
+      <%= f.text_field :machine_name, autofocus: :true, autocomplete: 'machine_name' %>
+    </div>
+    <div class="ufo_catchers_new_field">
+      <%= f.label :machine_id, '種類' %>
+      <%= f.select :machine_id, { UFOキャッチャー9: 1, UFOキャッチャー8: 2, UFOキャッチャー7: 3, UFOキャッチャーTRIPLE: 4, UFOキャッチャーTRIPLE-TWIN: 5, クレナ-フレックス: 6, クレナ2: 7,  } %>
+    </div>
+    <div class="ufo_catchers_new_field">
+      <%= f.label :ufo_catchers_email, 'メールアドレス' %>
+      <%= f.text_field :ufo_catchers_email, autofocus: :true, autocomplete: 'ufo_catchers_email' %>
+    </div>
+    <div>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+    </div>
+    <div class="actions">
+      <%= f.submit '確認画面へ' %>
+    </div>
+  <% end %>
+</section>
