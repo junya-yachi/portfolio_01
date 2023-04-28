@@ -8,11 +8,11 @@
     </div>
     <div class="ufo_catchers_new_field">
       <%= f.label :machine_id, '種類' %>
-      <%= f.select :machine_id, { UFOキャッチャー9: 1, UFOキャッチャー8: 2, UFOキャッチャー7: 3, UFOキャッチャーTRIPLE: 4, UFOキャッチャーTRIPLE-TWIN: 5, クレナ-フレックス: 6, クレナ2: 7,  } %>
+      <%= f.select :machine_id, { UFOキャッチャー9: 1, UFOキャッチャー8: 2, UFOキャッチャー7: 3, UFOキャッチャーTRIPLE: 4, UFOキャッチャーTRIPLE-TWIN: 5, クレナ-フレックス: 6, クレナ2: 7, ドリームキャッチャー: 8, UFOキャッチャーDUET: 9 , {include_blank: true} } %>
     </div>
     <div class="ufo_catchers_new_field">
-      <%= f.label :ufo_catchers_email, 'メールアドレス' %>
-      <%= f.text_field :ufo_catchers_email, autofocus: :true, autocomplete: 'ufo_catchers_email' %>
+      <%= f.label :credit_num, 'CREDIT' %>
+      <%= f.text_field :credit_num, autofocus: :true, autocomplete: 'credit_num' %>
     </div>
     <div>
       <%= f.hidden_field :user_id, value: current_user.id %>
