@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :user
+  has_many   :ufo_catcher,      through: :product_ufo
   validates  :order_date,       presence: true
   validates  :product_name,     presence: true
   validates  :product_price,    presence: true
